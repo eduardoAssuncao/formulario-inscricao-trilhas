@@ -1,0 +1,61 @@
+
+
+/* Animação de pulsação para o botão */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animações para a ilustração */
+.illustration {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.illustration.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animações para o logo */
+.logo {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.logo.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilo para o botão de inscrição */
+.subscribe__button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscribe__button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para o toast de boas-vindas */
+sl-alert {
+  --sl-panel-background-color: var(--sl-color-success-50);
+  --sl-panel-border-color: var(--sl-color-success-200);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .illustration.animated,
+  .logo.animated {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+}

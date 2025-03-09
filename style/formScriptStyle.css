@@ -1,0 +1,41 @@
+
+/* Estilo para área de upload quando um arquivo é selecionado */
+.custom-file-upload .upload-area.file-selected {
+  border-color: #28a745;
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.custom-file-upload .upload-area.file-selected span {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Estilos para campos inválidos */
+sl-input[invalid],
+sl-select[invalid] {
+  --sl-input-border-color: var(--sl-color-danger-500);
+  --sl-input-focus-ring-color: var(--sl-color-danger-500);
+}
+
+/* Estilos para o modal de sucesso */
+sl-dialog::part(panel) {
+  max-width: 500px;
+}
+
+sl-dialog h2 {
+  color: #28a745;
+  margin-top: 10px;
+}
+
+/* Estilos para as trilhas selecionadas */
+sl-radio:has(:checked) .upload-area {
+  border-color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  sl-dialog::part(panel) {
+    max-width: 90%;
+  }
+}
