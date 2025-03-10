@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="./style/formViewStyle.css">
     <link rel="stylesheet" href="./style/formScriptStyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/themes/light.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Matemasie&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/shoelace-autoloader.js"></script>
     <script src="./scripts/formScript.js"></script>
     <title>Formulário</title>
@@ -13,35 +16,37 @@
 <body>
     <header>
         <a href="./mainView.html">
-            <sl-button class="back__button" size="large" variant="text"">
-                <sl-icon slot="prefix" name="arrow-left"></sl-icon>
-                Voltar
-            </sl-button>
+            <button class="back__button">
+                <div class="back__button__content">
+                    <sl-icon slot="prefix" name="arrow-left"></sl-icon>
+                    Voltar
+                </div>
+            </button>
         </a>
 
-        <div class="header__title">
-            <h1>Formulário de inscrição</h1>
-            <p>Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
+        <div>
+            <h1 class="header__title">Formulário de inscrição</h1>
+            <p class="header__subtitle">Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
         </div>
     </header>
     <main>
         <form class="input-validation-required">
             <div>
-                <h3>Informações do participante</h3>
-                <sl-input placeholder="Nome" label="Nome completo" required></sl-input>
+                <h3 class="form__title">Informações do participante</h3>
+                <sl-input class="form__input" placeholder="Nome" label="Nome completo" required></sl-input>
                 <br />
-                <sl-input type="date" placeholder="Data" label="Data de nascimento" required></sl-input>
+                <sl-input class="form__input" type="date" placeholder="Data" label="Data de nascimento" required></sl-input>
                 <br />
-                <sl-input placeholder="Cpf" label="CPF" required></sl-input>
+                <sl-input class="form__input" placeholder="Cpf" label="CPF" required></sl-input>
                 <br />
-                <sl-select label="Sexo" value="Feminino" clearable required>
+                <sl-select class="form__input" label="Sexo" value="Feminino" clearable required>
                     <sl-option value="Feminino">Feminino</sl-option>
                     <sl-option value="Masculino">Masculino</sl-option>
                 </sl-select>
                 <br />
-                <sl-input placeholder="Email" label="E-mail" required></sl-input>
+                <sl-input class="form__input" placeholder="Email" label="E-mail" required></sl-input>
                 <br />
-                <sl-input placeholder="Telefone" label="Telefone" required></sl-input>
+                <sl-input class="form__input" placeholder="Telefone" label="Telefone" required></sl-input>
                 <br />
                 <div class="custom-file-upload">
                     <label class="upload-label">Documentos de identidade *</label>
@@ -56,18 +61,48 @@
             </div>
             <br />
             <div>
-                <h3>Endereço residencial</h3>
-                <sl-input placeholder="Cep" label="CEP" required></sl-input>
+                <h3 class="form__title">Endereço residencial</h3>
+                <sl-input 
+                class="form__input" 
+                placeholder="Cep" 
+                label="CEP" 
+                required
+                ></sl-input>
                 <br />
-                <div>
-                    <sl-input placeholder="Rua" label="Rua" required filled></sl-input>
-                    <sl-input placeholder="Número" label="Número" required></sl-input>
-                </div>
-                <br />
-                <div>
-                    <sl-input placeholder="Cidade" label="Cidade" required filled></sl-input>
-                    <sl-input placeholder="Estado" label="Estado" required filled></sl-input>
-                </div>
+                <div class="form__adress">
+                    <sl-input 
+                      class="form__input input-rua form__input__autocomplete" 
+                      placeholder="Rua" 
+                      label="Rua" 
+                      required 
+                      filled
+                    ></sl-input>
+                    
+                    <sl-input 
+                      class="form__input input-numero" 
+                      placeholder="Número" 
+                      label="Número" 
+                      required
+                    ></sl-input>
+                  </div>
+                
+                  <div class="form__adress">
+                    <sl-input 
+                      class="form__input input-cidade form__input__autocomplete" 
+                      placeholder="Cidade" 
+                      label="Cidade" 
+                      required 
+                      filled
+                    ></sl-input>
+                    
+                    <sl-input 
+                      class="form__input input-estado form__input__autocomplete" 
+                      placeholder="Estado" 
+                      label="Estado" 
+                      required 
+                      filled
+                    ></sl-input>
+                  </div>
                 <br />
                 <div class="custom-file-upload">
                     <label class="upload-label">Comprovante de residência *</label>
@@ -82,9 +117,9 @@
             </div>
             <br />
             <div>
-                <h3>Trilhas de aprendizagem</h3>
+                <h3 class="form__title">Trilhas de aprendizagem</h3>
                 <div class="select-trilha">
-                    <sl-radio-group label="Selecione apenas uma trilha *" name="a" value="1">
+                    <sl-radio-group class="form__input" label="Selecione apenas uma trilha *" name="a" value="1">
                         <sl-radio value="1">
                             <label for="fileInput" class="upload-area">
                                 <img src="./style/icon-front.svg" alt="Ícone de upload" />

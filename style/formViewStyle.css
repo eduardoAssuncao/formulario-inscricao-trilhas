@@ -1,10 +1,15 @@
+@import 'reset.css';
+
+/* UPLOAD DE DOCUMENTO */
 .custom-file-upload input[type="file"] {
   display: none;
 }
 
 .custom-file-upload .upload-label {
   display: block;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 140%;
   margin-bottom: 10px;
   color: #333;
 }
@@ -36,3 +41,106 @@
   font-size: 14px;
   color: #A8A29E;
 }
+/* ESTILO DA PAGINA */
+body{
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 2% 20%;
+}
+
+.back__button {
+  border: none;
+  background: transparent;
+}
+
+.back__button:hover{
+  cursor: pointer;
+}
+
+.back__button__content{
+  margin-top: 2rem;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  color: #57534E;
+}
+
+.header__title{
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 125%;
+  color: #292524;
+}
+
+.header__subtitle{
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  color: #57534E;
+}
+
+.form__title{
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 125%;
+  color: #292524;
+}
+
+.form__input::part(form-control-label){
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 140%;
+  color: #57534E;
+}
+
+.form__adress{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form__input__autocomplete::part(form-control-label){
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 140%;
+  color: #57534E;
+  opacity: 0.5;
+}
+
+.form__input__autocomplete::part(form-control-input){
+  width: 140%;
+}
+
+.form__input::part(form-control-input) {
+  flex: 1 1 auto;
+  min-width: 2rem; 
+}
+
+.input-rua::part(form-control-input) {
+  flex: 2 1 10%;
+}
+
+.input-numero::part(form-control-input) {
+  flex: 1 1 30%;
+}
+
+.input-cidade::part(form-control-input) {
+  flex: 2 1 10%;
+}
+
+.input-estado::part(form-control-input) {
+  flex: 1 1 30%;
+}
+
+@media (max-width: 768px) {
+  .form__adress {
+    flex-direction: column;
+  }
+  
+  .form__input {
+    min-width: 100%;
+  }
+}
+
+
