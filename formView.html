@@ -60,7 +60,7 @@
                 </div>
             </div>
             <br />
-            <div>
+            <div class="form__adress__container">
                 <h3 class="form__title">Endereço residencial</h3>
                 <sl-input 
                 class="form__input" 
@@ -68,7 +68,6 @@
                 label="CEP" 
                 required
                 ></sl-input>
-                <br />
                 <div class="form__adress">
                     <sl-input 
                       class="form__input input-rua form__input__autocomplete" 
@@ -119,35 +118,35 @@
             <div>
                 <h3 class="form__title">Trilhas de aprendizagem</h3>
                 <div class="select-trilha">
-                    <sl-radio-group class="form__input" label="Selecione apenas uma trilha *" name="a" value="1">
-                        <sl-radio value="1">
-                            <label for="fileInput" class="upload-area">
-                                <img src="./style/icon-front.svg" alt="Ícone de upload" />
-                                <span>Programação Front-end</span>
+                    <sl-radio-group class="form__input radio__title trilha__radio" label="Selecione apenas uma trilha *" name="a" value="1">
+                        <sl-radio class="trilha__radio__option" value="1">
+                            <label class="trilha__radio__label__icon" for="fileInput">
+                                <img class="trilha__radio__icon" src="./style/icon-front.svg" alt="Ícone de upload" />
+                                <span class="trilha__radio__label">Programação Front-end</span>
                             </label>
                         </sl-radio>
-                        <sl-radio value="2">
-                            <label for="fileInput" class="upload-area">
-                                <img src="./style/icon-back.svg" alt="Ícone de upload" />
-                                <span>Programação Back-end</span>
+                        <sl-radio class="trilha__radio__option" value="2">
+                            <label class="trilha__radio__label__icon" for="fileInput">
+                                <img class="trilha__radio__icon" src="./style/icon-back.svg" alt="Ícone de upload" />
+                                <span class="trilha__radio__label">Programação Back-end</span>
                             </label>
                         </sl-radio>
-                        <sl-radio value="3">
-                            <label for="fileInput" class="upload-area">
-                                <img src="./style/icon-jogos.svg" alt="Ícone de upload" />
-                                <span>Programação de Jogos</span>
+                        <sl-radio class="trilha__radio__option" value="3">
+                            <label class="trilha__radio__label__icon" for="fileInput">
+                                <img class="trilha__radio__icon" src="./style/icon-jogos.svg" alt="Ícone de upload" />
+                                <span class="trilha__radio__label">Programação de Jogos</span>
                             </label>
                         </sl-radio>
-                        <sl-radio value="4">
-                            <label for="fileInput" class="upload-area">
-                                <img src="./style/icon-ux.svg" alt="Ícone de upload" />
-                                <span>Design e Experiência</span>
+                        <sl-radio class="trilha__radio__option" value="4">
+                            <label class="trilha__radio__label__icon" for="fileInput">
+                                <img class="trilha__radio__icon" src="./style/icon-ux.svg" alt="Ícone de upload" />
+                                <span class="trilha__radio__label">Design e Experiência</span>
                             </label>
                         </sl-radio>
-                        <sl-radio value="5">
-                            <label for="fileInput" class="upload-area">
-                                <img src="./style/icon-dados.svg" alt="Ícone de upload" />
-                                <span>Ciência de Dados</span>
+                        <sl-radio class="trilha__radio__option" value="5">
+                            <label class="trilha__radio__label__icon" for="fileInput">
+                                <img class="trilha__radio__icon" src="./style/icon-dados.svg" alt="Ícone de upload" />
+                                <span class="trilha__radio__label">Ciência de Dados</span>
                             </label>
                         </sl-radio>
                       </sl-radio-group>

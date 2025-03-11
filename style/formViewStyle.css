@@ -94,6 +94,12 @@ body{
   color: #57534E;
 }
 
+.form__adress__container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .form__adress{
   display: flex;
   gap: 1rem;
@@ -104,33 +110,81 @@ body{
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 140%;
-  color: #57534E;
+  color: #574e4e;
   opacity: 0.5;
 }
 
 .form__input__autocomplete::part(form-control-input){
-  width: 140%;
+  width: 100%;
 }
 
-.form__input::part(form-control-input) {
-  flex: 1 1 auto;
-  min-width: 2rem; 
+.form__adress {
+  display: flex;
+  gap: 1rem; 
+  flex-wrap: wrap; 
 }
 
-.input-rua::part(form-control-input) {
-  flex: 2 1 10%;
+.form__input {
+  flex: 1 1 auto; 
+  min-width: 12.5rem; 
 }
 
-.input-numero::part(form-control-input) {
+.input-rua {
+  flex: 2 1 60%;
+}
+
+.input-numero {
+  flex: 1 1 30%; 
+}
+
+.input-cidade {
+  flex: 2 1 60%;
+}
+
+.input-estado {
   flex: 1 1 30%;
 }
 
-.input-cidade::part(form-control-input) {
-  flex: 2 1 10%;
+.radio__title::part(form-control-label){
+  margin-bottom: 1%;
 }
 
-.input-estado::part(form-control-input) {
-  flex: 1 1 30%;
+.trilha__radio::part(form-control-input){
+  display: flex;
+  gap: 1rem;
+  /* align-items: center; */
+  /* font-weight: 400; */
+  /* font-size: 0.875rem; */
+  /* line-height: 140%; */
+  /* color: #57534E; */
+}
+
+.trilha__radio__option{
+  display: flex;
+  border: 1px solid #292524;
+  border-radius: 5%;
+  padding: 1rem;
+}
+
+.trilha__radio__label__icon{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  align-items: center;
+}
+
+.trilha__radio__icon{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.trilha__radio__label{
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 140%;
+  color: #57534E;
 }
 
 @media (max-width: 768px) {
