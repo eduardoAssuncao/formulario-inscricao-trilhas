@@ -1,200 +1,207 @@
-@import 'reset.css';
+@import "reset.css";
 
 /* UPLOAD DE DOCUMENTO */
 .custom-file-upload input[type="file"] {
-  display: none;
+    display: none;
 }
 
 .custom-file-upload .upload-label {
-  display: block;
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 140%;
-  margin-bottom: 10px;
-  color: #333;
+    display: block;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 140%;
+    margin-bottom: 10px;
+    color: #333;
 }
 
 .custom-file-upload .upload-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  border: 2px dashed #ccc;
-  border-radius: 8px;
-  cursor: pointer;
-  text-align: center;
-  transition: border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: border-color 0.3s ease;
 }
 
 .custom-file-upload .upload-area:hover {
-  border-color: #007bff;
+    border-color: #007bff;
 }
 
 .custom-file-upload img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
 }
 
 .custom-file-upload span {
-  font-size: 14px;
-  color: #A8A29E;
+    font-size: 14px;
+    color: #a8a29e;
 }
 /* ESTILO DA PAGINA */
-body{
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  flex-direction: column;
-  margin: 2% 20%;
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 2% 20%;
 }
 
 .back__button {
-  border: none;
-  background: transparent;
+    border: none;
+    background: transparent;
 }
 
-.back__button:hover{
-  cursor: pointer;
+.back__button:hover {
+    cursor: pointer;
 }
 
-.back__button__content{
-  margin-top: 2rem;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 150%;
-  color: #57534E;
+.back__button__content {
+    margin-top: 2rem;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+    color: #57534e;
 }
 
-.header__title{
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 125%;
-  color: #292524;
+.header__title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 125%;
+    color: #292524;
 }
 
-.header__subtitle{
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 150%;
-  color: #57534E;
+.header__subtitle {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+    color: #57534e;
 }
 
-.form__title{
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 125%;
-  color: #292524;
+.form__title {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 125%;
+    color: #292524;
 }
 
-.form__input::part(form-control-label){
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 140%;
-  color: #57534E;
+.form__input::part(form-control-label) {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 140%;
+    color: #57534e;
 }
 
-.form__adress__container{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.form__adress{
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.form__input__autocomplete::part(form-control-label){
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 140%;
-  color: #574e4e;
-  opacity: 0.5;
-}
-
-.form__input__autocomplete::part(form-control-input){
-  width: 100%;
+.form__adress__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .form__adress {
-  display: flex;
-  gap: 1rem; 
-  flex-wrap: wrap; 
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.form__input__autocomplete::part(form-control-label) {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 140%;
+    color: #574e4e;
+    opacity: 0.5;
+}
+
+.form__input__autocomplete::part(form-control-input) {
+    width: 100%;
+}
+
+.form__adress {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .form__input {
-  flex: 1 1 auto; 
-  min-width: 12.5rem; 
+    flex: 1 1 auto;
+    min-width: 12.5rem;
 }
 
 .input-rua {
-  flex: 2 1 60%;
+    flex: 2 1 60%;
 }
 
 .input-numero {
-  flex: 1 1 30%; 
+    flex: 1 1 30%;
 }
 
 .input-cidade {
-  flex: 2 1 60%;
+    flex: 2 1 60%;
 }
 
 .input-estado {
-  flex: 1 1 30%;
+    flex: 1 1 30%;
 }
 
-.radio__title::part(form-control-label){
-  margin-bottom: 1%;
+.radio__title::part(form-control-label) {
+    margin-bottom: 1%;
 }
 
-.trilha__radio::part(form-control-input){
-  display: flex;
-  gap: 1rem;
-  /* align-items: center; */
-  /* font-weight: 400; */
-  /* font-size: 0.875rem; */
-  /* line-height: 140%; */
-  /* color: #57534E; */
+/* TRILHAS */
+.select-trilha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
 }
 
-.trilha__radio__option{
-  display: flex;
-  border: 1px solid #292524;
-  border-radius: 5%;
-  padding: 1rem;
+.trilha__radio__option {
+    flex: 1 1 calc(25% - 32px);
+    min-width: 200px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.trilha__radio__label__icon{
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 2rem;
-  align-items: center;
+.trilha__radio__option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.trilha__radio__icon{
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
+.trilha__radio__label__icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
-.trilha__radio__label{
-  text-align: center;
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 140%;
-  color: #57534E;
+.trilha__radio__icon {
+    width: 48px;
+    height: 48px;
+}
+
+.trilha__radio__label {
+    font-size: 14px;
+    color: #333;
+}
+
+.cancel__button {
+    text-decoration: none;
 }
 
 @media (max-width: 768px) {
-  .form__adress {
-    flex-direction: column;
-  }
-  
-  .form__input {
-    min-width: 100%;
-  }
+    .form__adress {
+        flex-direction: column;
+    }
+
+    .form__input {
+        min-width: 100%;
+    }
 }
-
-
