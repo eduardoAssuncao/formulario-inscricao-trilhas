@@ -49,10 +49,13 @@ Desenvolver um sistema de inscrição digital **eficiente, seguro e intuitivo** 
 
 ### **Página Inicial**  
 - Logo da **Trilhas Inova**.  
-- Botão de redirecionamento para o formulário de inscrição.  
+- Botão de redirecionamento para o formulário de inscrição.
+- Opção de realizar login caso a inscrição já tenha sido feita.
+- Visualização do comprovante de inscrição.
 
 ### **Formulário de Inscrição**  
-- Campos com máscaras para:  
+- Campos com máscaras para:
+  - Data (`DD.MM.AAAA`)
   - CPF (`___.___.___-__`).  
   - Telefone (`(DDD) _____-____`).  
 - Upload de documentos em formato **PDF** (ex.: RG, comprovante de residência).  
@@ -98,7 +101,15 @@ Desenvolver um sistema de inscrição digital **eficiente, seguro e intuitivo** 
 
 ---
 
-## **7. Como Contribuir**  
+## **7. Como Executar**  
+1. Faça um clone deste repositório com o comando `git clone` ou faça o download do zip.  
+2. Abra o arquivo dentro de alguma IDE como o Webstorm e inicialize a página utilizando o navegador desejado.
+3. Caso não seja possível, basta ir até a pasta do projeto e abrir os arquivos .HTML para visualizar e interagir com as páginas (algumas funcionalidades podem não funcionar).  
+4. Uma última opção é apenas ir até o deploy da página do GitHub pages encontrado neste repositório.
+
+---
+
+## **8. Como Contribuir**  
 1. Faça um fork deste repositório.  
 2. Crie uma branch com sua feature: `git checkout -b feature/nome-da-feature`.  
 3. Envie um pull request detalhando suas alterações.  
