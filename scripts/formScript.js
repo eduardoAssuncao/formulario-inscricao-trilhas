@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Função para gerar ID randômico para o usuário
+    const atribuirId = () => {
+        try {
+            const randomPart = Math.random().toString(36).substr(2, 9);
+            const timestampPart = Date.now().toString(36);
+            return randomPart + timestampPart;
+        } catch (error) {
+            throw new Error('Erro ao atribuir um ID');
+        }
+    }
+
     // Função para buscar endereço pelo CEP
     const buscarCep = async (cep) => {
         try {
@@ -186,6 +197,12 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Correções aplicadas com sucesso!');
     }, 500); 
 
+    // Atribuição de ID
+    const userID = atribuirId();
+    const idElement = document.getElementById('id_participante');
+    if (idElement) {
+        idElement.value = userID;
+    }
     // Manipulação do input de CEP
     const cepInput = document.querySelector('sl-input[placeholder="Cep"]');
     if (cepInput) {
@@ -464,6 +481,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Coletar dados do formulário
                     const dadosFormulario = {
+                        idUsuario: form.querySelector('sl-input[id="id_participante"]').value,
+                        senha: form.querySelector('sl-input[label="Senha"]').value,
                         nome: form.querySelector('sl-input[label="Nome completo"]').value,
                         dataNascimento: form.querySelector('sl-input[label="Data de nascimento"]').value,
                         cpf: form.querySelector('sl-input[label="CPF"]').value,

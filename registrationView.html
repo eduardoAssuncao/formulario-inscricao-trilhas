@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <a href="./mainView.html">
+        <button class="back__button">
+            <div class="back__button__content">
+                <sl-icon slot="prefix" name="arrow-left"></sl-icon>
+                Voltar
+            </div>
+        </button>
+    </a>
+
+    <div>
+        <h1 class="header__title">Formulário de inscrição</h1>
+        <p class="header__subtitle">
+            Preencha os dados abaixo para fazer sua inscrição no
+            Programa Trilhas.
+        </p>
+    </div>
+</header>
+<main>
+    <form class="input-validation-required">
+        <div>
+            <h3 class="form__title">Informações do participante</h3>
+            <sl-input
+                    id="id_participante"
+                    class="form__input"
+                    placeholder="ID do Usuário"
+                    label="ID do Usuário"
+                    required
+                    disabled
+            ></sl-input>
+            <br />
+            <sl-input
+                    class="form__input"
+                    placeholder="Senha"
+                    label="Senha"
+                    type="password"
+                    required
+            ></sl-input>
+            <br />
+            <sl-input
+                    class="form__input"
+                    placeholder="Nome"
+                    label="Nome completo"
+                    required
+            ></sl-input>
+            <br />
+            <sl-input
+                    class="form__input"
+                    type="date"
+                    placeholder="Data"
+                    label="Data de nascimento"
+                    required
+            ></sl-input>
+            <br />
+            <sl-input
+                    class="form__input"
+                    placeholder="Cpf"
+                    label="CPF"
+                    required
+            ></sl-input>
+            <br />
+            <sl-select
+                    class="form__input"
+                    label="Sexo"
+                    value="Feminino"
+                    clearable
+                    required
+            >
+                <sl-option value="Feminino">Feminino</sl-option>
+                <sl-option value="Masculino">Masculino</sl-option>
+            </sl-select>
+            <br />
+            <sl-input
+                    class="form__input"
+                    placeholder="Email"
+                    label="E-mail"
+                    required
+            ></sl-input>
+            <br />
+            <sl-input
+                    class="form__input"
+                    placeholder="Telefone"
+                    label="Telefone"
+                    required
+            ></sl-input>
+            <br />
+            <div class="custom-file-upload">
+                <label class="upload-label"
+                >Documentos de identidade *</label
+                >
+
+                <input
+                        type="file"
+                        id="fileInputIdentidade"
+                        accept=".pdf"
+                        required
+                />
+
+                <label for="fileInputIdentidade" class="upload-area">
+                    <img
+                            src="./style/cloud-upload.svg"
+                            alt="Ícone de upload"
+                    />
+                    <span>Clique aqui para selecionar o arquivo</span>
+                </label>
+            </div>
+        </div>
+        <br />
+        <div class="form__adress__container">
+            <h3 class="form__title">Endereço residencial</h3>
+            <sl-input
+                    class="form__input"
+                    placeholder="Cep"
+                    label="CEP"
+                    required
+            ></sl-input>
+            <div class="form__adress">
+                <sl-input
+                        class="form__input input-rua form__input__autocomplete"
+                        placeholder="Rua"
+                        label="Rua"
+                        required
+                        filled
+                ></sl-input>
+
+                <sl-input
+                        class="form__input input-numero"
+                        placeholder="Número"
+                        label="Número"
+                        required
+                ></sl-input>
+            </div>
+
+            <div class="form__adress">
+                <sl-input
+                        class="form__input input-cidade form__input__autocomplete"
+                        placeholder="Cidade"
+                        label="Cidade"
+                        required
+                        filled
+                ></sl-input>
+
+                <sl-input
+                        class="form__input input-estado form__input__autocomplete"
+                        placeholder="Estado"
+                        label="Estado"
+                        required
+                        filled
+                ></sl-input>
+            </div>
+            <br />
+            <div class="custom-file-upload">
+                <label class="upload-label"
+                >Comprovante de residência *</label
+                >
+
+                <input
+                        type="file"
+                        id="fileInputResidencia"
+                        accept=".pdf"
+                        required
+                />
+
+                <label for="fileInputResidencia" class="upload-area">
+                    <img
+                            src="./style/cloud-upload.svg"
+                            alt="Ícone de upload"
+                    />
+                    <span>Clique aqui para selecionar o arquivo</span>
+                </label>
+            </div>
+        </div>
+        <br />
+        <div>
+            <h3 class="form__title">Trilhas de aprendizagem</h3>
+            <div class="select-trilha">
+                <sl-radio-group
+                        class="form__input radio__title trilha__radio"
+                        label="Selecione apenas uma trilha *"
+                        name="a"
+                        value="1"
+                >
+                    <sl-radio class="trilha__radio__option" value="1">
+                        <label
+                                class="trilha__radio__label__icon"
+                                for="fileInput"
+                        >
+                            <img
+                                    class="trilha__radio__icon"
+                                    src="./style/icon-front.svg"
+                                    alt="Ícone de upload"
+                            />
+                            <span class="trilha__radio__label"
+                            >Programação Front-end</span
+                            >
+                        </label>
+                    </sl-radio>
+                    <sl-radio class="trilha__radio__option" value="2">
+                        <label
+                                class="trilha__radio__label__icon"
+                                for="fileInput"
+                        >
+                            <img
+                                    class="trilha__radio__icon"
+                                    src="./style/icon-back.svg"
+                                    alt="Ícone de upload"
+                            />
+                            <span class="trilha__radio__label"
+                            >Programação Back-end</span
+                            >
+                        </label>
+                    </sl-radio>
+                    <sl-radio class="trilha__radio__option" value="3">
+                        <label
+                                class="trilha__radio__label__icon"
+                                for="fileInput"
+                        >
+                            <img
+                                    class="trilha__radio__icon"
+                                    src="./style/icon-jogos.svg"
+                                    alt="Ícone de upload"
+                            />
+                            <span class="trilha__radio__label"
+                            >Programação de Jogos</span
+                            >
+                        </label>
+                    </sl-radio>
+                    <sl-radio class="trilha__radio__option" value="4">
+                        <label
+                                class="trilha__radio__label__icon"
+                                for="fileInput"
+                        >
+                            <img
+                                    class="trilha__radio__icon"
+                                    src="./style/icon-ux.svg"
+                                    alt="Ícone de upload"
+                            />
+                            <span class="trilha__radio__label"
+                            >Design e Experiência</span
+                            >
+                        </label>
+                    </sl-radio>
+                    <sl-radio class="trilha__radio__option" value="5">
+                        <label
+                                class="trilha__radio__label__icon"
+                                for="fileInput"
+                        >
+                            <img
+                                    class="trilha__radio__icon"
+                                    src="./style/icon-dados.svg"
+                                    alt="Ícone de upload"
+                            />
+                            <span class="trilha__radio__label"
+                            >Ciência de Dados</span
+                            >
+                        </label>
+                    </sl-radio>
+                </sl-radio-group>
+            </div>
+        </div>
+        <br />
+        <sl-checkbox required
+        >Declaro que li e concordo com os
+            <a href="https://" target="_blank">Termos e Condições</a> e
+            com a
+            <a href="https://" target="_blank"
+            >Política de Privacidade.</a
+            ></sl-checkbox
+        >
+        <br /><br />
+        <div>
+            <sl-button>
+                <a class="cancel__button" href="./mainView.html">Cancelar<a
+                /></sl-button>
+            <sl-button type="submit" variant="primary"
+            >Fazer Inscrição</sl-button
+            >
+        </div>
+    </form>
+</main>
+</body>
+</html>
