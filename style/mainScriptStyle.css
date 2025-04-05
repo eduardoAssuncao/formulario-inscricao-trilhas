@@ -46,6 +46,15 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo para o botão de login */
+.login__button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login__button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* Estilos para o toast de boas-vindas */
 sl-alert {
   --sl-panel-background-color: var(--sl-color-success-50);

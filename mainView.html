@@ -13,7 +13,7 @@
       type="module"
       src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/shoelace-autoloader.js"
     ></script>
-    <script src="./scripts/mainScript.js"></script>
+    <script src="./scripts/mainScript.js" defer></script>
     <title>Trilhas Inova</title>
   </head>
   <body>
@@ -27,6 +27,26 @@
             Realizar Inscrição
           </sl-button>
         </a>
+        <form class="login__container">
+          <sl-input
+                  id="id_usuario"
+                  class="form__input login"
+                  placeholder="ID do Usuário"
+                  required
+                  pill
+          ></sl-input>
+          <br />
+          <sl-input
+                  id="id_senha"
+                  class="form__input login"
+                  placeholder="Senha do Usuário"
+                  required
+                  pill
+          ></sl-input>
+          <sl-button id="login_button" class="login__button" size="large" pill>
+              Login
+          </sl-button>
+        </form>
       </div>
     </main>
     <footer>
