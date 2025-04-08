@@ -377,156 +377,119 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Validação do formulário
+    // Validação de senha
+    const senhaInput = document.querySelector('sl-input[type="password"]');
+    if (senhaInput) {
+        senhaInput.addEventListener('sl-input', function() {
+            const senha = this.value;
+            
+            if (senha.length < 6) {
+                this.setAttribute('invalid', '');
+                this.help = 'A senha deve ter no mínimo 6 caracteres';
+            } else {
+                this.removeAttribute('invalid');
+                this.help = '';
+            }
+        });
+
+        senhaInput.addEventListener('sl-blur', function() {
+            const senha = this.value;
+            
+            if (!senha) {
+                this.setAttribute('invalid', '');
+                this.help = 'Este campo é obrigatório';
+            } else if (senha.length < 6) {
+                this.setAttribute('invalid', '');
+                this.help = 'A senha deve ter no mínimo 6 caracteres';
+            } else {
+                this.removeAttribute('invalid');
+                this.help = '';
+            }
+        });
+    }
+
+    // Função para validar o formulário
+    const validarFormulario = (form) => {
+        let isValid = true;
+        const inputs = form.querySelectorAll('sl-input[required], sl-select[required], sl-radio-group[required]');
+        
+        inputs.forEach(input => {
+            if (!input.value) {
+                input.setAttribute('invalid', '');
+                input.help = 'Este campo é obrigatório';
+                isValid = false;
+            } else if (input.type === 'password' && input.value.length < 6) {
+                input.setAttribute('invalid', '');
+                input.help = 'A senha deve ter no mínimo 6 caracteres';
+                isValid = false;
+            } else {
+                input.removeAttribute('invalid');
+                input.help = '';
+            }
+        });
+
+        const checkbox = form.querySelector('sl-checkbox[required]');
+        if (checkbox && !checkbox.checked) {
+            isValid = false;
+            checkbox.setAttribute('invalid', '');
+        }
+
+        return isValid;
+    }
+
+    // Configurar validações do formulário
     const form = document.querySelector('form');
     if (form) {
-        // evento de submit ao formulário
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            console.log('Formulário submetido');
             
-            // variáveis  de validação
-            let isValid = true;
-            let camposInvalidos = [];
-            
-            try {
-                    // validacoes
-              
-                const inputs = form.querySelectorAll('sl-input[required]');
-                inputs.forEach(input => {
-                    console.log(`Verificando input: ${input.label || 'sem label'}, valor: "${input.value}"`);
-                    
-                    input.removeAttribute('invalid');
-                    
-                    if (!input.value || input.value.trim() === '') {
-                        isValid = false;
-                        input.setAttribute('invalid', '');
-                        camposInvalidos.push(input.label || 'Campo obrigatório');
-                        console.log(`Campo inválido: ${input.label || 'sem label'}`);
-                    }
-                });
+            if (validarFormulario(form)) {
+                // Coletar dados do formulário
+                const dadosFormulario = {
+                    idUsuario: form.querySelector('#id_participante').value,
+                    senha: form.querySelector('sl-input[type="password"]').value,
+                    nome: form.querySelector('sl-input[placeholder="Nome"]').value,
+                    dataNascimento: form.querySelector('sl-input[type="date"]').value,
+                    cpf: form.querySelector('sl-input[placeholder="Cpf"]').value,
+                    sexo: form.querySelector('sl-select[label="Sexo"]').value,
+                    email: form.querySelector('sl-input[placeholder="Email"]').value,
+                    telefone: form.querySelector('sl-input[placeholder="Telefone"]').value,
+                    endereco: {
+                        cep: form.querySelector('sl-input[placeholder="Cep"]').value,
+                        rua: form.querySelector('.input-rua').value,
+                        numero: form.querySelector('.input-numero').value,
+                        cidade: form.querySelector('.input-cidade').value,
+                        estado: form.querySelector('.input-estado').value
+                    },
+                    trilha: document.querySelector('.trilha__radio').value,
+                    dataInscricao: new Date().toISOString()
+                };
+
+                // Salvar dados no localStorage
+                localStorage.setItem('dadosInscricao', JSON.stringify(dadosFormulario));
+                localStorage.setItem('inscricaoRealizada', 'true');
+
+                mostrarAlerta('Inscrição realizada com sucesso! Redirecionando...', 'success', 2000);
                 
-                const selects = form.querySelectorAll('sl-select[required]');
-                selects.forEach(select => {
-                    console.log(`Verificando select: ${select.label || 'sem label'}, valor: "${select.value}"`);
-                    
-                    select.removeAttribute('invalid');
-                    
-                    if (!select.value || select.value.trim() === '') {
-                        isValid = false;
-                        select.setAttribute('invalid', '');
-                        camposInvalidos.push(select.label || 'Campo obrigatório');
-                        console.log(`Campo inválido: ${select.label || 'sem label'}`);
-                    }
-                });
-                
-                const checkbox = form.querySelector('sl-checkbox[required]');
-                if (checkbox) {
-                    console.log(`Verificando checkbox, checked: ${checkbox.checked}`);
-                    
-                    checkbox.removeAttribute('invalid');
-                    
-                    if (!checkbox.checked) {
-                        isValid = false;
-                        checkbox.setAttribute('invalid', '');
-                        camposInvalidos.push('Termos e condições');
-                        console.log('Checkbox inválido: Termos e condições');
-                    }
-                }
-                
-                fileInputs.forEach(input => {
-                    console.log(`Verificando arquivo: ${input.id}, files: ${input.files ? input.files.length : 0}`);
-                    
-                    const uploadArea = input.nextElementSibling;
-                    uploadArea.style.borderColor = '';
-                    
-                    if (!input.files || input.files.length === 0) {
-                        isValid = false;
-                        uploadArea.style.borderColor = 'var(--sl-color-danger-500)';
-                        const label = input.id === 'fileInputIdentidade' ? 'Documento de identidade' : 'Comprovante de residência';
-                        camposInvalidos.push(label);
-                        console.log(`Arquivo inválido: ${label}`);
-                    }
-                });
-                
-                
-                const radioGroup = form.querySelector('.trilha__radio');
-                if (radioGroup) {
-                    console.log(`Verificando radio group, valor: "${radioGroup.value}"`);
-                    
-                    radioGroup.removeAttribute('invalid');
-                    
-                    if (!radioGroup.value) {
-                        isValid = false;
-                        radioGroup.setAttribute('invalid', '');
-                        camposInvalidos.push('Trilha de aprendizagem');
-                        console.log('Radio group inválido: Trilha de aprendizagem');
-                    }
-                }
-                
-                // Verificar se há campos com erro de validação
-                const camposComErro = form.querySelectorAll('[invalid]');
-                camposComErro.forEach(campo => {
-                    if (campo.tagName.toLowerCase().startsWith('sl-')) {
-                        isValid = false;
-                        const label = campo.label || 'Campo com erro';
-                        if (!camposInvalidos.includes(label)) {
-                            camposInvalidos.push(label);
-                        }
-                    }
-                });
-                
-                if (isValid) {
-                    console.log('Formulário válido!');
-                    
-                    // Coletar dados do formulário
-                    const dadosFormulario = {
-                        idUsuario: form.querySelector('sl-input[id="id_participante"]').value,
-                        senha: form.querySelector('sl-input[label="Senha"]').value,
-                        nome: form.querySelector('sl-input[label="Nome completo"]').value,
-                        dataNascimento: form.querySelector('sl-input[label="Data de nascimento"]').value,
-                        cpf: form.querySelector('sl-input[label="CPF"]').value,
-                        sexo: form.querySelector('sl-select[label="Sexo"]').value,
-                        email: form.querySelector('sl-input[label="E-mail"]').value,
-                        telefone: form.querySelector('sl-input[label="Telefone"]').value,
-                        endereco: {
-                            cep: form.querySelector('sl-input[label="CEP"]').value,
-                            rua: form.querySelector('.input-rua').value,
-                            numero: form.querySelector('.input-numero').value,
-                            cidade: form.querySelector('.input-cidade').value,
-                            estado: form.querySelector('.input-estado').value
-                        },
-                        trilha: radioGroup.value,
-                        dataInscricao: new Date().toISOString()
-                    };
-                    
-                    // Salvar dados no localStorage
-                    localStorage.setItem('dadosInscricao', JSON.stringify(dadosFormulario));
-                    localStorage.setItem('inscricaoRealizada', 'true');
-                    
-                    mostrarAlerta('Inscrição realizada com sucesso! Redirecionando para a página inicial...', 'success', 3000);
-                    
-                    // Redirecionar para a página principal após um breve delay
-                    setTimeout(() => {
-                        window.location.href = './mainView.html';
-                    }, 3000);
-                } else {
-                    console.log('Formulário inválido!');
-                    console.log('Campos inválidos:', camposInvalidos);
-                    
-                    const mensagemErro = `Os seguintes campos precisam ser preenchidos corretamente: ${camposInvalidos.join(', ')}`;
-                    mostrarAlerta(mensagemErro, 'danger', 8000);
-                    
-                    const primeiroInvalido = form.querySelector('[invalid], input[style*="border-color"]');
-                    if (primeiroInvalido) {
-                        primeiroInvalido.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                }
-            } catch (error) {
-                console.error('Erro durante a validação:', error);
-                
-                mostrarAlerta('Ocorreu um erro durante a validação do formulário. Por favor, tente novamente.', 'danger', 8000);
+                setTimeout(() => {
+                    window.location.href = './registrationView.html';
+                }, 2000);
+            } else {
+                mostrarAlerta('Por favor, preencha todos os campos obrigatórios.', 'danger');
             }
+        });
+
+        const inputs = form.querySelectorAll('sl-input[required], sl-select[required]');
+        inputs.forEach(input => {
+            input.addEventListener('sl-blur', function() {
+                if (!this.value) {
+                    this.setAttribute('invalid', '');
+                    this.help = 'Este campo é obrigatório';
+                } else {
+                    this.removeAttribute('invalid');
+                    this.help = '';
+                }
+            });
         });
     } else {
         console.error('Formulário não encontrado!');

@@ -70,3 +70,23 @@ footer a:hover {
         width: 80%;
     }
 }
+
+.alerta {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.alerta strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.alerta-success {
+    background-color: #4CAF50 !important;
+}
+
+.alerta-danger {
+    background-color: #F44336 !important;
+}

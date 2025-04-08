@@ -42,7 +42,7 @@
             </div>
         </header>
         <main>
-            <form class="input-validation-required">
+            <form class="input-validation-required" novalidate>
                 <div>
                     <h3 class="form__title">Informações do participante</h3>
                     <sl-input
@@ -60,6 +60,8 @@
                         label="Senha"
                         type="password"
                         required
+                        minlength="6"
+                        help-text="Mínimo de 6 caracteres"
                     ></sl-input>
                     <br />
                     <sl-input
@@ -67,6 +69,7 @@
                         placeholder="Nome"
                         label="Nome completo"
                         required
+                        minlength="3"
                     ></sl-input>
                     <br />
                     <sl-input
@@ -145,7 +148,6 @@
                             placeholder="Rua"
                             label="Rua"
                             required
-                            filled
                         ></sl-input>
 
                         <sl-input

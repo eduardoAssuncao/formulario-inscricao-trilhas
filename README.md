@@ -118,3 +118,45 @@ Desenvolver um sistema de inscrição digital **eficiente, seguro e intuitivo** 
 
 ## **Licença**  
 Este projeto está licenciado sob a **Licença MIT**. Veja [LICENSE](LICENSE) para mais detalhes.  
+
+---
+
+## **9. Atualizações do Projeto**
+
+### **Versão 1.1.0 - Abril 2024**
+
+#### **Melhorias na Interface**
+- Adicionadas animações suaves na página inicial
+- Feedback visual aprimorado para ações do usuário
+- Design responsivo otimizado para diferentes dispositivos
+
+#### **Sistema de Login**
+- Implementado sistema de login com validação
+- Redirecionamento automático após autenticação
+- Proteção de rotas para usuários não autenticados
+- Mensagens de feedback para erros de login
+
+#### **Formulário de Inscrição**
+- Validação em tempo real dos campos
+- Máscaras automáticas implementadas:
+  - CPF com validação
+  - Telefone com formatação
+  - CEP com autopreenchimento
+- ID do usuário gerado automaticamente
+- Senha com requisito mínimo de 6 caracteres
+
+#### **Comprovante de Inscrição**
+- Nova página de visualização de dados
+- Exibição organizada das informações
+- Botão de retorno à página principal
+
+#### **Segurança**
+- Validação de dados aprimorada
+- Proteção contra submissões inválidas
+- Armazenamento seguro no localStorage
+- Controle de acesso às páginas restritas
+
+#### **Correções**
+- Corrigido timeout da validação dos campos do formulário
+- Corrigido redirecionamento após login
+- Ajustado feedback visual de formulários

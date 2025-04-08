@@ -27,7 +27,7 @@
             Realizar Inscrição
           </sl-button>
         </a>
-        <form class="login__container">
+        <form class="login__container" onsubmit="return false;">
           <sl-input
                   id="id_usuario"
                   class="form__input login"
@@ -40,6 +40,7 @@
                   id="id_senha"
                   class="form__input login"
                   placeholder="Senha do Usuário"
+                  type="password"
                   required
                   pill
           ></sl-input>
