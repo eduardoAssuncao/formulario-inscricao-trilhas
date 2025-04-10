@@ -82,8 +82,7 @@ Desenvolver um sistema de inscrição digital **eficiente, seguro e intuitivo** 
 
 5. **Confirmação e Finalização**  
    - Revisão dos dados.  
-   - Envio do formulário.  
-   - Recebimento de e-mail de confirmação com instruções.  
+   - Envio do formulário.   
 
 <div align="center">
     <img src="fluxo.png" alt="Shoelace"width="300" height="500"/>
